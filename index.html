@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cruise Reunion Murder Mystery — Character Portal</title>
+  <meta name="description" content="Enter your code to reveal your character prompt." />
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <header class="hero" id="top">
+    <div class="hero-bg">
+      <!-- Put your “Murder Mystery” image in /assets and rename to murder-mystery.png (or change this src) -->
+      <img src="assets/murder-mystery.png" alt="" class="hero-img" />
+      <div class="hero-overlay"></div>
+    </div>
+
+    <div class="container hero-content">
+      <h1>Cruise Reunion Murder Mystery</h1>
+      <p class="subhead">Enter your code to reveal your character.</p>
+
+      <div class="card input-card" role="region" aria-label="Character code entry">
+        <label class="label" for="codeInput">Your code</label>
+        <div class="input-row">
+          <input id="codeInput" type="text" inputmode="text" autocomplete="off" placeholder="e.g., AKASH-CRUISE" />
+          <button id="revealBtn" class="btn">Reveal</button>
+        </div>
+        <p class="hint">Tip: codes are case-insensitive. If it doesn’t work, copy/paste the code I sent you.</p>
+        <p id="error" class="error" aria-live="polite"></p>
+      </div>
+    </div>
+  </header>
+
+  <main class="container main">
+    <section id="result" class="card result-card" hidden>
+      <div class="result-header">
+        <h2 id="charName">Character Name</h2>
+        <span id="charCode" class="pill">CODE</span>
+      </div>
+
+      <div class="meta">
+        <div><strong>Role:</strong> <span id="charRole">[Placeholder]</span></div>
+        <div><strong>Vibe:</strong> <span id="charVibe">[Placeholder]</span></div>
+        <div><strong>Goal:</strong> <span id="charGoal">[Placeholder]</span></div>
+      </div>
+
+      <hr class="divider" />
+
+      <h3>Your Prompt</h3>
+      <div id="charPrompt" class="prompt">
+        <p>[Paste the character prompt here later.]</p>
+        <ul>
+          <li>[Add 2–5 secrets, relationships, or motivations.]</li>
+          <li>[Add what you want them to do during the party.]</li>
+        </ul>
+      </div>
+
+      <div class="actions">
+        <button id="copyBtn" class="btn secondary">Copy prompt</button>
+        <a class="link" href="#top">Back to top ↑</a>
+      </div>
+
+      <p class="fineprint">
+        Please don’t share your prompt. Half the fun is the chaos.
+      </p>
+    </section>
+
+    <section class="card help-card">
+      <h3>Not working?</h3>
+      <ul>
+        <li>Make sure you typed the dash <code>-</code> correctly.</li>
+        <li>Try refreshing the page and entering the code again.</li>
+        <li>If it still fails, text the host.</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p>© <span id="year"></span> Cruise Reunion Murder Mystery</p>
+    </div>
+  </footer>
+
+  <script src="/script.js"></script>
+</body>
+</html>
