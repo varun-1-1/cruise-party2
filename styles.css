@@ -122,3 +122,27 @@ input:focus{outline:2px solid rgba(255,59,59,0.5); outline-offset:2px}
 code{background: rgba(255,255,255,0.08); padding:2px 6px; border-radius:6px}
 
 .footer{padding: 22px 0;color: var(--muted); text-align:center}
+
+.partiful-link { margin-top: 14px; display: flex; justify-content: flex-start; }
+
+.partiful-btn{
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 12px;
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,0.18);
+  background: rgba(255,255,255,0.06);
+  color: var(--text);
+  text-decoration: none;
+  font-weight: 600;
+}
+.partiful-btn:hover{ filter: brightness(1.06); }
+
+.partiful-mark{
+  width: 26px; height: 26px;
+  border-radius: 8px;
+  display: grid; place-items: center;
+  background: rgba(255,255,255,0.12);
+  font-weight: 900;
+}
