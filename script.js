@@ -28,7 +28,7 @@ const CHARACTERS = {
     name: "Akash",
     role: "Theo Whitaker — The Writer",
     motive: "You want more money, but you don’t kill anyone over it.",
-    traits: "Quiet, Clumsy, Parents died when you were young, so you're close with your older sister ",
+    traits: "Quiet<br>Clumsy, Parents died when you were young, so you're close with your older sister ",
     doThis: "[e.g., bring up the final battle scene; ask people about rewrites; steer convos toward contracts]",
     feels: "[e.g., you suspect X is lying; you admire Y; you think Z is incompetent]",
     outfit: "[optional: writer’s scarf, notebook, pen, fake script pages]",
