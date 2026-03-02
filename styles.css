@@ -95,15 +95,14 @@ input:focus{outline:2px solid rgba(255,59,59,0.5); outline-offset:2px}
   color: var(--muted);
   font-size:0.9rem;
 }
+
+/* ALWAYS one line per field (no side-by-side columns) */
 .meta{
-  display:grid;
-  grid-template-columns: 1fr;
-  gap:8px;
+  display:flex;
+  flex-direction: column;
+  gap:10px;
   margin-top: 12px;
   color: var(--muted);
-}
-@media(min-width:720px){
-  .meta{grid-template-columns: 1fr 1fr 1fr}
 }
 
 .divider{border:none;border-top:1px solid var(--border);margin:16px 0}
