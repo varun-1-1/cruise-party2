@@ -28,9 +28,7 @@ const CHARACTERS = {
     name: "Akash",
     role: "Theo Whitaker — The Writer",
     motive: "You want more money, but you don’t kill anyone over it.",
-    traits: "Quiet 
-Clumsy 
-Parents died when you were young, so you're close with your older sister 
+    traits: "Quiet, Clumsy, Parents died when you were young, so you're close with your older sister 
 Hate being in front of the camera 
 Drive a hybrid car 
 Cat owner, which you like to take funny pictures of your cat 
