@@ -130,9 +130,8 @@ const CHARACTERS = {
       "Antagonist (Raven): “Raven scares me… but in a hot way.”"
     ],
     outfit: [
-      "Overdressed",
-      "Dramatic makeup",
-      "Accessorize to try to out-do main character energy"
+      "Overdressed / Accessorize to try to out-do main character energy",
+      "Dramatic makeup"
     ]
   },
 
