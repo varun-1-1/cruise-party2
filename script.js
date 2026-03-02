@@ -28,13 +28,22 @@ const CHARACTERS = {
     name: "Akash",
     role: "Theo Whitaker — The Writer",
     motive: "You want more money, but you don’t kill anyone over it.",
-    traits: "[e.g., witty, detail-obsessed, a little dramatic]",
+    traits: "Quiet 
+Clumsy 
+Parents died when you were young, so you're close with your older sister 
+Hate being in front of the camera 
+Drive a hybrid car 
+Cat owner, which you like to take funny pictures of your cat 
+The only job you ever had was writing 
+Chess is your game 
+Don't drink alcohol 
+",
     doThis: "[e.g., bring up the final battle scene; ask people about rewrites; steer convos toward contracts]",
     feels: "[e.g., you suspect X is lying; you admire Y; you think Z is incompetent]",
     outfit: "[optional: writer’s scarf, notebook, pen, fake script pages]",
     promptHtml: `
       <p><strong>Prompt:</strong> In this mystery, you wrote the script for the film. Your favorite scene in the movie was the final battle.</p>
-      <p>[Paste the rest of Akash’s prompt here.]</p>
+  
     `
   },
 
