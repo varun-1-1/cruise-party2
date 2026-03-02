@@ -208,3 +208,17 @@ code{background: rgba(255,255,255,0.08); padding:2px 6px; border-radius:6px}
   .result-card{ padding: 16px; }
   .meta > div{ padding: 10px; }
 }
+.hero-logo{
+  display:block;
+  margin: 0 auto 18px;
+  width: min(520px, 85vw); /* big but responsive */
+  height: auto;
+  filter: drop-shadow(0 10px 22px rgba(0,0,0,0.45));
+}
+
+@media (max-width: 520px){
+  .hero-logo{
+    width: min(420px, 88vw);
+    margin-bottom: 14px;
+  }
+}
