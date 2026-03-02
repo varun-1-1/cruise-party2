@@ -205,7 +205,7 @@ const CHARACTERS = {
       "Minor Character (Lola): “Lola needs to learn her place.”",
       "Boom Operator (Jade): “Jade listens more than she speaks.”",
       "Reporter (Miles): “Miles keeps asking about ‘rivalry rumors.’”",
-      "Main Character (Luca): “Luca and I carried this film.”",
+      "Main Character (Luca): “Luca and I carried this film, throw shade against them.”",
       "Camera Operator (Nina): “Nina caught my bad side once.”",
       "Costume Designer (Celeste): “Celeste made Luca look better than me.”",
       "Antagonist (Raven): “Raven stayed in character even at wrap party.”"
@@ -213,7 +213,7 @@ const CHARACTERS = {
     outfit: [
       "Stylish / fitted outfit",
       "Sunglasses",
-      "Drink in hand (shade toward main character)"
+      "Drink in hand"
     ]
   },
 
@@ -250,8 +250,8 @@ const CHARACTERS = {
       "Antagonist (Raven): “Raven warned me to ‘be careful what I print.’”"
     ],
     outfit: [
-      "Press badge (print one)",
-      "Blazer",
+      "Press badge (I will try to print one / if you can get that would be awesome)",
+      "Blazer/Glasses",
       "Notebook"
     ]
   },
@@ -334,7 +334,7 @@ const CHARACTERS = {
     outfit: [
       "All black outfit",
       "Optional beanie/cap",
-      "Some sort of camera (host has one you can use) — keep framing for shots"
+      "Some sort of camera (I have one you can use) — keep framing for shots"
     ]
   },
 
@@ -375,7 +375,7 @@ const CHARACTERS = {
       "Trendy outfit",
       "Statement glasses",
       "Scarf (very chic)",
-      "Measuring tape, safety pins, etc."
+      "Measuring tape around neck, safety pins, other tailoring accessories"
     ]
   },
 
@@ -414,7 +414,7 @@ const CHARACTERS = {
     ],
     outfit: [
       "Leather jacket cool girl vibes",
-      "Dark lippie",
+      "Dark lipstick",
       "Gloves (optional)",
       "Villainous tone"
     ]
