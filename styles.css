@@ -15,6 +15,8 @@ body{
   background: var(--bg);
   color: var(--text);
   line-height:1.6;
+  /* make room for the always-visible logo */
+  padding-top: 125px;
 }
 .container{max-width:var(--max);margin:0 auto;padding:0 18px}
 
@@ -84,31 +86,66 @@ input:focus{outline:2px solid rgba(255,59,59,0.5); outline-offset:2px}
 .error{margin-top:10px;color:#ffb4b4;font-weight:700}
 
 .main{padding: 26px 0 48px}
-.result-card{padding: 18px}
+
+/* Result card */
+.result-card{padding: 22px;}
 .result-header{
-  display:flex;gap:12px;align-items:center;justify-content:space-between;flex-wrap:wrap
+  display:flex;
+  gap:12px;
+  align-items:flex-start;
+  justify-content:space-between;
+  flex-wrap:wrap;
 }
+#charName{font-size: 1.6rem; letter-spacing: 0.2px; margin:0;}
 .pill{
   padding:6px 10px;
   border-radius:999px;
   border:1px solid rgba(255,255,255,0.18);
+  background: rgba(255,255,255,0.06);
   color: var(--muted);
   font-size:0.9rem;
 }
 
-/* ALWAYS one line per field (no side-by-side columns) */
+/* Prompt box */
+.prompt{
+  margin-top: 10px;
+  padding: 14px;
+  border: 1px solid rgba(255,255,255,0.10);
+  border-radius: 12px;
+  background: rgba(255,255,255,0.04);
+}
+.prompt p{
+  margin: 0;
+  color: var(--text);
+  line-height: 1.75;
+}
+.prompt ul{margin:10px 0 0 20px;color: var(--muted)}
+
+/* ALWAYS one line per field */
 .meta{
   display:flex;
   flex-direction: column;
-  gap:10px;
-  margin-top: 12px;
+  gap:14px;
+  margin-top: 16px;
   color: var(--muted);
 }
+.meta > div{
+  padding: 12px;
+  border: 1px solid rgba(255,255,255,0.10);
+  border-radius: 12px;
+  background: rgba(255,255,255,0.03);
+}
+.meta strong{
+  display:block;
+  color:#d5deee;
+  font-size:0.95rem;
+  margin-bottom:8px;
+}
+.meta span{color: var(--muted); white-space: pre-wrap;}
+.meta ul{ margin: 0; padding-left: 18px; }
+.meta li{ margin: 6px 0; color: var(--muted); line-height: 1.6; }
 
 .divider{border:none;border-top:1px solid var(--border);margin:16px 0}
-
-.prompt{margin-top:10px;color: var(--text)}
-.prompt ul{margin:10px 0 0 20px;color: var(--muted)}
 
 .actions{display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap;margin-top:18px}
 .link{color: var(--muted); text-decoration:none}
@@ -122,8 +159,8 @@ code{background: rgba(255,255,255,0.08); padding:2px 6px; border-radius:6px}
 
 .footer{padding: 22px 0;color: var(--muted); text-align:center}
 
+/* Partiful link */
 .partiful-link { margin-top: 14px; display: flex; justify-content: flex-start; }
-
 .partiful-btn{
   display: inline-flex;
   align-items: center;
@@ -137,7 +174,6 @@ code{background: rgba(255,255,255,0.08); padding:2px 6px; border-radius:6px}
   font-weight: 600;
 }
 .partiful-btn:hover{ filter: brightness(1.06); }
-
 .partiful-mark{
   width: 26px; height: 26px;
   border-radius: 8px;
@@ -146,105 +182,29 @@ code{background: rgba(255,255,255,0.08); padding:2px 6px; border-radius:6px}
   font-weight: 900;
 }
 
-/* ===== Character sheet polish ===== */
-.result-card{
-  padding: 22px;
-}
-
-.result-header{
-  align-items: flex-start;
-  gap: 14px;
-}
-
-#charName{
-  font-size: 1.6rem;
-  letter-spacing: 0.2px;
-  margin: 0;
-}
-
-.pill{
-  background: rgba(255,255,255,0.06);
-}
-
-.prompt{
-  margin-top: 10px;
-  padding: 14px 14px;
-  border: 1px solid rgba(255,255,255,0.10);
-  border-radius: 12px;
-  background: rgba(255,255,255,0.04);
-}
-
-.prompt p{
-  margin: 0;
-  color: var(--text);
-  line-height: 1.75;
-}
-
-/* Make the meta section feel like labeled rows */
-.meta{
-  margin-top: 16px;
-  gap: 14px;
-}
-
-.meta > div{
-  padding: 12px 12px;
-  border: 1px solid rgba(255,255,255,0.10);
-  border-radius: 12px;
-  background: rgba(255,255,255,0.03);
-}
-
-.meta strong{
-  display: block;
-  color: #d5deee;
-  font-size: 0.95rem;
-  margin-bottom: 8px;
-}
-
-/* Bullets look cleaner */
-.meta ul{
-  margin: 0;
-  padding-left: 18px;
-}
-.meta li{
-  margin: 6px 0;
-  color: var(--muted);
-  line-height: 1.6;
-}
-
-/* Make Role/Motive value a bit brighter (when it's plain text) */
-.meta span{
-  color: var(--muted);
-  white-space: pre-wrap;
-}
-
-/* Smaller screens: tighten spacing */
-@media (max-width: 520px){
-  .result-card{ padding: 16px; }
-  .meta > div{ padding: 10px; }
-}
-
-
+/* BIG always-visible logo badge */
 .logo-badge{
   position: fixed;
   top: 14px;
   left: 14px;
   z-index: 9999;
   display: inline-flex;
-  padding: 8px;
-  border-radius: 14px;
-  background: rgba(15,22,32,0.65);
+  padding: 10px;
+  border-radius: 18px;
+  background: rgba(15,22,32,0.70);
   border: 1px solid rgba(255,255,255,0.14);
   backdrop-filter: blur(6px);
 }
-
 .logo-badge img{
-  height: 44px;          /* adjust size here */
+  height: 110px;  /* big */
   width: auto;
   display: block;
 }
-
 .logo-badge:hover{ filter: brightness(1.05); }
 
 @media (max-width: 520px){
-  .logo-badge img{ height: 36px; }
+  body{ padding-top: 95px; }
+  .logo-badge img{ height: 85px; }
+  .result-card{ padding: 16px; }
+  .meta > div{ padding: 10px; }
 }
