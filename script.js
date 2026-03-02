@@ -20,13 +20,14 @@ const copyBtn = document.getElementById("copyBtn");
 // For a party portal, this is usually fine; for real security, use a server check.
 const CHARACTERS = {
   "AKASH-7Q9M3K": {
-    name: "Akash — [Character Name Placeholder]",
-    role: "[Role placeholder]",
-    vibe: "[Vibe placeholder]",
-    goal: "[Goal placeholder]",
     promptHtml: `
-      <p><strong>[Placeholder prompt]</strong> Paste Akash’s character prompt here.</p>
-      <ul>
+      <p><strong> In this mystery, you wrote the script for the film. Your favorite scene in the movie was the final battle. 
+.</p>
+    name: "Akash",
+    role: "Theo Whitaker — The Writer",
+    motive: "You want more money, but you don't kill anyone over it.",
+    goal: "[Goal placeholder]",
+     <ul>
         <li>[Secret #1]</li>
         <li>[Relationship / motive]</li>
         <li>[What to do during the party]</li>
