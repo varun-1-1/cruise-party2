@@ -9,213 +9,85 @@ const errorEl = document.getElementById("error");
 const resultSection = document.getElementById("result");
 const charName = document.getElementById("charName");
 const charCode = document.getElementById("charCode");
+
 const charRole = document.getElementById("charRole");
-const charVibe = document.getElementById("charVibe");
-const charGoal = document.getElementById("charGoal");
+const charMotive = document.getElementById("charMotive");
+const charTraits = document.getElementById("charTraits");
+const charDoThis = document.getElementById("charDoThis");
+const charFeels = document.getElementById("charFeels");
+const charOutfit = document.getElementById("charOutfit");
+
 const charPrompt = document.getElementById("charPrompt");
 const copyBtn = document.getElementById("copyBtn");
 
-// ====== Unguessable-ish codes (share each person only their own) ======
+// ====== Codes (share each person only their own) ======
 // NOTE: This is still a static site. Someone *could* view-source and find this map.
 // For a party portal, this is usually fine; for real security, use a server check.
 const CHARACTERS = {
   "AKASH-7Q9M3K": {
-    promptHtml: `
-      <p><strong> In this mystery, you wrote the script for the film. Your favorite scene in the movie was the final battle. 
-.</p>
     name: "Akash",
     role: "Theo Whitaker — The Writer",
-    motive: "You want more money, but you don't kill anyone over it.",
-    goal: "[Goal placeholder]",
-     <ul>
-        <li>[Secret #1]</li>
-        <li>[Relationship / motive]</li>
-        <li>[What to do during the party]</li>
-      </ul>
+    motive: "You want more money, but you don’t kill anyone over it.",
+    traits: "[e.g., witty, detail-obsessed, a little dramatic]",
+    doThis: "[e.g., bring up the final battle scene; ask people about rewrites; steer convos toward contracts]",
+    feels: "[e.g., you suspect X is lying; you admire Y; you think Z is incompetent]",
+    outfit: "[optional: writer’s scarf, notebook, pen, fake script pages]",
+    promptHtml: `
+      <p><strong>Prompt:</strong> In this mystery, you wrote the script for the film. Your favorite scene in the movie was the final battle.</p>
+      <p>[Paste the rest of Akash’s prompt here.]</p>
     `
   },
+
   "SHIVANGI-V4P8J2": {
-    name: "Shivangi — [Character Name Placeholder]",
+    name: "Shivangi",
     role: "[Role placeholder]",
-    vibe: "[Vibe placeholder]",
-    goal: "[Goal placeholder]",
+    motive: "[Motive placeholder]",
+    traits: "[Personality traits placeholder]",
+    doThis: "[While playing, do this placeholder]",
+    feels: "[How you feel about everyone placeholder]",
+    outfit: "[Outfit/props optional placeholder]",
     promptHtml: `
-      <p><strong>[Placeholder prompt]</strong> Paste Shivangi’s character prompt here.</p>
-      <ul>
-        <li>[Secret #1]</li>
-        <li>[Relationship / motive]</li>
-        <li>[What to do during the party]</li>
-      </ul>
+      <p><strong>Prompt:</strong> [Paste Shivangi’s full character prompt here.]</p>
     `
   },
+
   "ABHIGNA-N6X1R7": {
-    name: "Abhigna — [Character Name Placeholder]",
+    name: "Abhigna",
     role: "[Role placeholder]",
-    vibe: "[Vibe placeholder]",
-    goal: "[Goal placeholder]",
+    motive: "[Motive placeholder]",
+    traits: "[Personality traits placeholder]",
+    doThis: "[While playing, do this placeholder]",
+    feels: "[How you feel about everyone placeholder]",
+    outfit: "[Outfit/props optional placeholder]",
     promptHtml: `
-      <p><strong>[Placeholder prompt]</strong> Paste Abhigna’s character prompt here.</p>
-      <ul>
-        <li>[Secret #1]</li>
-        <li>[Relationship / motive]</li>
-        <li>[What to do during the party]</li>
-      </ul>
+      <p><strong>Prompt:</strong> [Paste Abhigna’s full character prompt here.]</p>
     `
   },
+
   "CAISSA-K3T9W5": {
-    name: "Caissa — [Character Name Placeholder]",
+    name: "Caissa",
     role: "[Role placeholder]",
-    vibe: "[Vibe placeholder]",
-    goal: "[Goal placeholder]",
+    motive: "[Motive placeholder]",
+    traits: "[Personality traits placeholder]",
+    doThis: "[While playing, do this placeholder]",
+    feels: "[How you feel about everyone placeholder]",
+    outfit: "[Outfit/props optional placeholder]",
     promptHtml: `
-      <p><strong>[Placeholder prompt]</strong> Paste Caissa’s character prompt here.</p>
-      <ul>
-        <li>[Secret #1]</li>
-        <li>[Relationship / motive]</li>
-        <li>[What to do during the party]</li>
-      </ul>
+      <p><strong>Prompt:</strong> [Paste Caissa’s full character prompt here.]</p>
     `
   },
+
   "PRIYANSHI-2H8QZ6": {
-    name: "Priyanshi — [Character Name Placeholder]",
+    name: "Priyanshi",
     role: "[Role placeholder]",
-    vibe: "[Vibe placeholder]",
-    goal: "[Goal placeholder]",
+    motive: "[Motive placeholder]",
+    traits: "[Personality traits placeholder]",
+    doThis: "[While playing, do this placeholder]",
+    feels: "[How you feel about everyone placeholder]",
+    outfit: "[Outfit/props optional placeholder]",
     promptHtml: `
-      <p><strong>[Placeholder prompt]</strong> Paste Priyanshi’s character prompt here.</p>
-      <ul>
-        <li>[Secret #1]</li>
-        <li>[Relationship / motive]</li>
-        <li>[What to do during the party]</li>
-      </ul>
+      <p><strong>Prompt:</strong> [Paste Priyanshi’s full character prompt here.]</p>
     `
   },
-  "VIGGY-M7C4P1": {
-    name: "Viggy — [Character Name Placeholder]",
-    role: "[Role placeholder]",
-    vibe: "[Vibe placeholder]",
-    goal: "[Goal placeholder]",
-    promptHtml: `
-      <p><strong>[Placeholder prompt]</strong> Paste Viggy’s character prompt here.</p>
-      <ul>
-        <li>[Secret #1]</li>
-        <li>[Relationship / motive]</li>
-        <li>[What to do during the party]</li>
-      </ul>
-    `
-  },
-  "VARUN-X5N9D2": {
-    name: "Varun — [Host / Character Placeholder]",
-    role: "[Role placeholder]",
-    vibe: "[Vibe placeholder]",
-    goal: "[Goal placeholder]",
-    promptHtml: `
-      <p><strong>[Placeholder prompt]</strong> Paste Varun’s character prompt here.</p>
-      <ul>
-        <li>[Secret #1]</li>
-        <li>[Relationship / motive]</li>
-        <li>[What to do during the party]</li>
-      </ul>
-    `
-  },
-  "MISHA-R8K2V9": {
-    name: "Misha — [Character Name Placeholder]",
-    role: "[Role placeholder]",
-    vibe: "[Vibe placeholder]",
-    goal: "[Goal placeholder]",
-    promptHtml: `
-      <p><strong>[Placeholder prompt]</strong> Paste Misha’s character prompt here.</p>
-      <ul>
-        <li>[Secret #1]</li>
-        <li>[Relationship / motive]</li>
-        <li>[What to do during the party]</li>
-      </ul>
-    `
-  },
-  "AKANSHA-3J7QF4": {
-    name: "Akansha — [Character Name Placeholder]",
-    role: "[Role placeholder]",
-    vibe: "[Vibe placeholder]",
-    goal: "[Goal placeholder]",
-    promptHtml: `
-      <p><strong>[Placeholder prompt]</strong> Paste Akansha’s character prompt here.</p>
-      <ul>
-        <li>[Secret #1]</li>
-        <li>[Relationship / motive]</li>
-        <li>[What to do during the party]</li>
-      </ul>
-    `
-  },
-  "ANISHA-P6W1T8": {
-    name: "Anisha — [Character Name Placeholder]",
-    role: "[Role placeholder]",
-    vibe: "[Vibe placeholder]",
-    goal: "[Goal placeholder]",
-    promptHtml: `
-      <p><strong>[Placeholder prompt]</strong> Paste Anisha’s character prompt here.</p>
-      <ul>
-        <li>[Secret #1]</li>
-        <li>[Relationship / motive]</li>
-        <li>[What to do during the party]</li>
-      </ul>
-    `
-  }
-};
 
-function normalizeCode(s) {
-  return (s || "").trim().toUpperCase();
-}
-
-function reveal() {
-  if (!errorEl || !resultSection) return;
-
-  errorEl.textContent = "";
-  const code = normalizeCode(codeInput?.value);
-
-  if (!code) {
-    errorEl.textContent = "Enter your code first.";
-    resultSection.hidden = true;
-    return;
-  }
-
-  const data = CHARACTERS[code];
-  if (!data) {
-    errorEl.textContent = "No match. Double-check the code I sent you.";
-    resultSection.hidden = true;
-    return;
-  }
-
-  charName.textContent = data.name;
-  charCode.textContent = code;
-  charRole.textContent = data.role;
-  charVibe.textContent = data.vibe;
-  charGoal.textContent = data.goal;
-  charPrompt.innerHTML = data.promptHtml;
-
-  resultSection.hidden = false;
-  resultSection.scrollIntoView({ behavior: "smooth", block: "start" });
-}
-
-revealBtn?.addEventListener("click", reveal);
-codeInput?.addEventListener("keydown", (e) => {
-  if (e.key === "Enter") reveal();
-});
-
-copyBtn?.addEventListener("click", async () => {
-  try {
-    const text =
-      `${charName.textContent}\n\n` +
-      `Code: ${charCode.textContent}\n` +
-      `Role: ${charRole.textContent}\n` +
-      `Vibe: ${charVibe.textContent}\n` +
-      `Goal: ${charGoal.textContent}\n\n` +
-      `${charPrompt.innerText}`;
-
-    await navigator.clipboard.writeText(text);
-    copyBtn.textContent = "Copied!";
-    setTimeout(() => (copyBtn.textContent = "Copy prompt"), 1200);
-  } catch {
-    copyBtn.textContent = "Copy failed";
-    setTimeout(() => (copyBtn.textContent = "Copy prompt"), 1200);
-  }
-});
+  "VIGGY-M
