@@ -20,141 +20,75 @@ const charOutfit = document.getElementById("charOutfit");
 const charPrompt = document.getElementById("charPrompt");
 const copyBtn = document.getElementById("copyBtn");
 
-// ====== Codes (share each person only their own) ======
-// NOTE: This is still a static site. Someone *could* view-source and find this map.
-// For a party portal, this is usually fine; for real security, use a server check.
+// ====== Character data ======
 const CHARACTERS = {
+  // Akash Gupta
   "AKASH-7Q9M3K": {
-    name: "Akash",
-    role: "Theo Whitaker — The Writer",
-    motive: "You want more money, but you don’t kill anyone over it.",
-    traits: "Quiet<br>Clumsy, Parents died when you were young, so you're close with your older sister ",
-    doThis: "[e.g., bring up the final battle scene; ask people about rewrites; steer convos toward contracts]",
-    feels: "[e.g., you suspect X is lying; you admire Y; you think Z is incompetent]",
-    outfit: "[optional: writer’s scarf, notebook, pen, fake script pages]",
+    name: "Theo Whitaker",
+    role: "The Writer",
     promptHtml: `
-      <p><strong>Prompt:</strong> In this mystery, you wrote the script for the film. Your favorite scene in the movie was the final battle.</p>
-  
-    `
+      <p><strong>In this mystery, you wrote the script for the film.</strong> Your favorite scene in the movie was the final battle.</p>
+    `,
+    motive: "You want more money, but you don't kill anyone over it.",
+    traits: [
+      "Quiet",
+      "Clumsy",
+      "Parents died when you were young, so you're close with your older sister",
+      "Hate being in front of the camera",
+      "Drive a hybrid car",
+      "Cat owner (you like taking funny pictures of your cat)",
+      "The only job you ever had was writing",
+      "Chess is your game",
+      "Don't drink alcohol"
+    ],
+    doThis: [
+      "Don't drink tap water",
+      "Be helpful by handing people drinks and snacks",
+      "Correct grammar"
+    ],
+    feels: [
+      `Director (Valentina): “She butchered my script and calls it vision.”`,
+      `Minor Character (Lola): “Lola’s character had depth until editing.”`,
+      `Boom Operator (Jade): “Jade definitely overheard something she shouldn’t have.”`,
+      `Co-Star (Sabrina): “Sabrina only memorized her lines after I rewrote them.”`,
+      `Reporter (Miles): “Miles is circling this production like a vulture.”`,
+      `Main Character (Luca): “Luca can’t pronounce half my dialogue.”`,
+      `Camera Operator (Nina): “Nina appreciated the symbolism.”`,
+      `Costume Designer (Celeste): “Celeste at least respected my themes.”`,
+      `Antagonist (Raven): “Raven understood the darkness in my writing… too well.”`
+    ],
+    outfit: [
+      "Glasses",
+      "Sweater / cardigan vibes",
+      "Notebook with scribbles"
+    ]
   },
 
-  "SHIVANGI-V4P8J2": {
-    name: "Shivangi",
-    role: "[Role placeholder]",
-    motive: "[Motive placeholder]",
-    traits: "[Personality traits placeholder]",
-    doThis: "[While playing, do this placeholder]",
-    feels: "[How you feel about everyone placeholder]",
-    outfit: "[Outfit/props optional placeholder]",
-    promptHtml: `
-      <p><strong>Prompt:</strong> [Paste Shivangi’s full character prompt here.]</p>
-    `
-  },
-
-  "ABHIGNA-N6X1R7": {
-    name: "Abhigna",
-    role: "[Role placeholder]",
-    motive: "[Motive placeholder]",
-    traits: "[Personality traits placeholder]",
-    doThis: "[While playing, do this placeholder]",
-    feels: "[How you feel about everyone placeholder]",
-    outfit: "[Outfit/props optional placeholder]",
-    promptHtml: `
-      <p><strong>Prompt:</strong> [Paste Abhigna’s full character prompt here.]</p>
-    `
-  },
-
-  "CAISSA-K3T9W5": {
-    name: "Caissa",
-    role: "[Role placeholder]",
-    motive: "[Motive placeholder]",
-    traits: "[Personality traits placeholder]",
-    doThis: "[While playing, do this placeholder]",
-    feels: "[How you feel about everyone placeholder]",
-    outfit: "[Outfit/props optional placeholder]",
-    promptHtml: `
-      <p><strong>Prompt:</strong> [Paste Caissa’s full character prompt here.]</p>
-    `
-  },
-
-  "PRIYANSHI-2H8QZ6": {
-    name: "Priyanshi",
-    role: "[Role placeholder]",
-    motive: "[Motive placeholder]",
-    traits: "[Personality traits placeholder]",
-    doThis: "[While playing, do this placeholder]",
-    feels: "[How you feel about everyone placeholder]",
-    outfit: "[Outfit/props optional placeholder]",
-    promptHtml: `
-      <p><strong>Prompt:</strong> [Paste Priyanshi’s full character prompt here.]</p>
-    `
-  },
-
-  "VIGGY-M7C4P1": {
-    name: "Viggy",
-    role: "[Role placeholder]",
-    motive: "[Motive placeholder]",
-    traits: "[Personality traits placeholder]",
-    doThis: "[While playing, do this placeholder]",
-    feels: "[How you feel about everyone placeholder]",
-    outfit: "[Outfit/props optional placeholder]",
-    promptHtml: `
-      <p><strong>Prompt:</strong> [Paste Viggy’s full character prompt here.]</p>
-    `
-  },
-
-  "VARUN-X5N9D2": {
-    name: "Varun",
-    role: "[Role placeholder]",
-    motive: "[Motive placeholder]",
-    traits: "[Personality traits placeholder]",
-    doThis: "[While playing, do this placeholder]",
-    feels: "[How you feel about everyone placeholder]",
-    outfit: "[Outfit/props optional placeholder]",
-    promptHtml: `
-      <p><strong>Prompt:</strong> [Paste Varun’s full character prompt here.]</p>
-    `
-  },
-
-  "MISHA-R8K2V9": {
-    name: "Misha",
-    role: "[Role placeholder]",
-    motive: "[Motive placeholder]",
-    traits: "[Personality traits placeholder]",
-    doThis: "[While playing, do this placeholder]",
-    feels: "[How you feel about everyone placeholder]",
-    outfit: "[Outfit/props optional placeholder]",
-    promptHtml: `
-      <p><strong>Prompt:</strong> [Paste Misha’s full character prompt here.]</p>
-    `
-  },
-
-  "AKANSHA-3J7QF4": {
-    name: "Akansha",
-    role: "[Role placeholder]",
-    motive: "[Motive placeholder]",
-    traits: "[Personality traits placeholder]",
-    doThis: "[While playing, do this placeholder]",
-    feels: "[How you feel about everyone placeholder]",
-    outfit: "[Outfit/props optional placeholder]",
-    promptHtml: `
-      <p><strong>Prompt:</strong> [Paste Akansha’s full character prompt here.]</p>
-    `
-  },
-
-  "ANISHA-P6W1T8": {
-    name: "Anisha",
-    role: "[Role placeholder]",
-    motive: "[Motive placeholder]",
-    traits: "[Personality traits placeholder]",
-    doThis: "[While playing, do this placeholder]",
-    feels: "[How you feel about everyone placeholder]",
-    outfit: "[Outfit/props optional placeholder]",
-    promptHtml: `
-      <p><strong>Prompt:</strong> [Paste Anisha’s full character prompt here.]</p>
-    `
-  }
+  // Placeholders (fill later)
+  "SHIVANGI-V4P8J2": placeholder("Shivangi", "Shivangi’s Character"),
+  "ABHIGNA-N6X1R7": placeholder("Abhigna", "Abhigna’s Character"),
+  "CAISSA-K3T9W5": placeholder("Caissa", "Caissa’s Character"),
+  "PRIYANSHI-2H8QZ6": placeholder("Priyanshi", "Priyanshi’s Character"),
+  "VIGGY-M7C4P1": placeholder("Viggy", "Viggy’s Character"),
+  "VARUN-X5N9D2": placeholder("Varun", "Varun’s Character"),
+  "MISHA-R8K2V9": placeholder("Misha", "Misha’s Character"),
+  "AKANSHA-3J7QF4": placeholder("Akansha", "Akansha’s Character"),
+  "ANISHA-P6W1T8": placeholder("Anisha", "Anisha’s Character")
 };
+
+// Helper: builds placeholder objects fast
+function placeholder(personName, characterName) {
+  return {
+    name: characterName,
+    role: "[Role]",
+    promptHtml: `<p><strong>Prompt:</strong> Paste ${personName}'s prompt here.</p>`,
+    motive: "[Motive]",
+    traits: ["[Trait 1]", "[Trait 2]"],
+    doThis: ["[Do this 1]", "[Do this 2]"],
+    feels: ["[Feelings about others]"],
+    outfit: ["[Optional outfit/props]"]
+  };
+}
 
 function normalizeCode(s) {
   return (s || "").trim().toUpperCase();
@@ -163,6 +97,12 @@ function normalizeCode(s) {
 function safeText(el, value) {
   if (!el) return;
   el.textContent = value ?? "";
+}
+
+function listToText(value) {
+  if (!value) return "";
+  if (Array.isArray(value)) return value.join("\n");
+  return String(value);
 }
 
 function reveal() {
@@ -187,15 +127,14 @@ function reveal() {
   safeText(charName, data.name);
   safeText(charCode, code);
 
-  // Prompt should appear under name (ordering handled by index.html)
   if (charPrompt) charPrompt.innerHTML = data.promptHtml || "";
 
-  safeText(charRole, data.role);
-  safeText(charMotive, data.motive);
-  safeText(charTraits, data.traits);
-  safeText(charDoThis, data.doThis);
-  safeText(charFeels, data.feels);
-  safeText(charOutfit, data.outfit);
+  safeText(charRole, data.role || "");
+  safeText(charMotive, data.motive || "");
+  safeText(charTraits, listToText(data.traits));
+  safeText(charDoThis, listToText(data.doThis));
+  safeText(charFeels, listToText(data.feels));
+  safeText(charOutfit, listToText(data.outfit));
 
   resultSection.hidden = false;
   resultSection.scrollIntoView({ behavior: "smooth", block: "start" });
@@ -210,14 +149,14 @@ copyBtn?.addEventListener("click", async () => {
   try {
     const text =
       `${charName?.textContent || ""}\n\n` +
-      `Code: ${charCode?.textContent || ""}\n` +
+      `Code: ${charCode?.textContent || ""}\n\n` +
+      `PROMPT:\n${charPrompt?.innerText || ""}\n\n` +
       `Role: ${charRole?.textContent || ""}\n` +
-      `Motive: ${charMotive?.textContent || ""}\n` +
-      `Personality Traits: ${charTraits?.textContent || ""}\n` +
-      `While playing, do this: ${charDoThis?.textContent || ""}\n` +
-      `How you feel about everyone: ${charFeels?.textContent || ""}\n` +
-      `Outfit/props (optional): ${charOutfit?.textContent || ""}\n\n` +
-      `${charPrompt?.innerText || ""}`;
+      `Motive: ${charMotive?.textContent || ""}\n\n` +
+      `Personality Traits:\n${charTraits?.textContent || ""}\n\n` +
+      `While playing, do this:\n${charDoThis?.textContent || ""}\n\n` +
+      `How you feel about everyone:\n${charFeels?.textContent || ""}\n\n` +
+      `Outfit/props (optional):\n${charOutfit?.textContent || ""}`;
 
     await navigator.clipboard.writeText(text);
     if (copyBtn) copyBtn.textContent = "Copied!";
