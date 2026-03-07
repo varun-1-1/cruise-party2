@@ -1,3 +1,5 @@
+// script.js
+
 // ====== Basic page wiring ======
 const yearEl = document.getElementById("year");
 if (yearEl) yearEl.textContent = new Date().getFullYear();
@@ -58,7 +60,7 @@ const CHARACTERS = {
   // Akash -> Theo Whitaker (Writer)
   "AKASH-7Q9M3K": {
     name: "Theo Whitaker",
-    role: "Writer",
+    role: "Writer (Akash / Theo)",
     promptHtml: `
       <p><strong>In this mystery, you wrote the script for the film.</strong> Your favorite scene in the movie was the final battle.</p>
     `,
@@ -80,15 +82,16 @@ const CHARACTERS = {
       "Correct grammar"
     ],
     feels: [
-      "Director (Valentina): “She butchered my script and calls it vision.”",
-      "Minor Character (Lola): “Lola’s character had depth until editing.”",
-      "Boom Operator (Jade): “Jade definitely overheard something she shouldn’t have.”",
-      "Co-Star (Sabrina): “Sabrina only memorized her lines after I rewrote them.”",
-      "Reporter (Miles): “Miles is circling this production like a vulture.”",
-      "Main Character (Luca): “Luca can’t pronounce half my dialogue.”",
-      "Camera Operator (Nina): “Nina appreciated the symbolism.”",
-      "Costume Designer (Celeste): “Celeste at least respected my themes.”",
-      "Antagonist (Raven): “Raven understood the darkness in my writing… too well.”"
+      "Director (Priyanshi / Valentina): “She butchered my script and calls it vision.”",
+      "Minor Character (Shivangi / Lola): “Lola’s character had depth until editing.”",
+      "Boom Operator (Abhigna / Jake): “Jade definitely overheard something she shouldn’t have.”",
+      "Co-Star (Caissa / Sabrina): “Sabrina only memorized her lines after I rewrote them.”",
+      "Reporter (Viggy / Miles): “Miles is circling this production like a vulture.”",
+      "Main Character (Varun / Luca): “Luca can’t pronounce half my dialogue.”",
+      "Camera Operator (Misha / Nina): “Nina appreciated the symbolism.”",
+      "Costume Designer (Akansha / Celeste): “Celeste at least respected my themes.”",
+      "Antagonist (Anisha / Raven): “Raven understood the darkness in my writing… too well.”",
+      "Gaffer (Mihir / Luke): “Stop blaming me — lighting is the soul of cinema.”"
     ],
     outfit: [
       "Glasses",
@@ -100,7 +103,7 @@ const CHARACTERS = {
   // Shivangi -> Lola Marquez (Minor Character)
   "SHIVANGI-V4P8J2": {
     name: "Lola Marquez",
-    role: "Minor Character",
+    role: "Minor Character (Shivangi / Lola)",
     promptHtml: `
       <p><strong>In this mystery, you’re an up-and-coming performer playing a minor role</strong> — but in a big picture that you hope will get you more fans. Your favorite scene in the movie involved animals.</p>
     `,
@@ -119,26 +122,28 @@ const CHARACTERS = {
       "Wager random bets with people"
     ],
     feels: [
-      "Director (Valentina): “Valentina promised me a bigger arc.”",
-      "Writer (Theo): “Theo said my character was essential.”",
-      "Boom Operator (Jade): “Jade told me people were talking about me.”",
-      "Co-Star (Sabrina): “Sabrina ignored me unless cameras were rolling.”",
-      "Reporter (Miles): “Miles seemed VERY interested in my trailer visit.”",
-      "Main Character (Luca): “Luca flirted with me between takes.”",
-      "Camera Operator (Nina): “Nina always made sure I was in frame.”",
-      "Costume Designer (Celeste): “Celeste gave me better outfits than Sabrina.”",
-      "Antagonist (Raven): “Raven scares me… but in a hot way.”"
+      "Director (Priyanshi / Valentina): “Valentina promised me a bigger arc.”",
+      "Writer (Akash / Theo): “Theo said my character was essential.”",
+      "Boom Operator (Abhigna / Jake): “Jade told me people were talking about me.”",
+      "Co-Star (Caissa / Sabrina): “Sabrina ignored me unless cameras were rolling.”",
+      "Reporter (Viggy / Miles): “Miles seemed VERY interested in my trailer visit.”",
+      "Main Character (Varun / Luca): “Luca flirted with me between takes.”",
+      "Camera Operator (Misha / Nina): “Nina always made sure I was in frame.”",
+      "Costume Designer (Akansha / Celeste): “Celeste gave me better outfits than Sabrina.”",
+      "Antagonist (Anisha / Raven): “Raven scares me… but in a hot way.”",
+      "Gaffer (Mihir / Luke): “Luke is weirdly intense about lighting.”"
     ],
     outfit: [
-      "Overdressed / Accessorize to try to out-do main character energy",
-      "Dramatic makeup"
+      "Overdressed",
+      "Dramatic makeup",
+      "Accessorize to try to out-do main character energy"
     ]
   },
 
-  // Abhigna -> Jade Rivers (Boom Operator)
+  // Abhigna -> Jake (Boom Operator)
   "ABHIGNA-N6X1R7": {
-    name: "Jade Rivers",
-    role: "Boom Operator",
+    name: "Jake Rivers",
+    role: "Boom Operator (Abhigna / Jake)",
     promptHtml: `
       <p><strong>In this mystery, you operated the microphones.</strong> Your favorite scene in the movie was the romantic moment.</p>
     `,
@@ -157,15 +162,16 @@ const CHARACTERS = {
       "Ask people about their favorite podcasts"
     ],
     feels: [
-      "Director (Valentina): “Valentina yelled at me when the mic wasn’t even on.”",
-      "Writer (Theo): “Theo cried in the hallway.”",
-      "Minor Character (Lola): “Lola practices interviews alone.”",
-      "Co-Star (Sabrina): “Sabrina talks badly about Luca when he leaves.”",
-      "Reporter (Miles): “Miles tried to bribe me for audio files.”",
-      "Main Character (Luca): “Luca rehearsed a fight speech off-camera.”",
-      "Camera Operator (Nina): “Nina and I saw something weird that night.”",
-      "Costume Designer (Celeste): “Celeste threatened to quit mid-shoot.”",
-      "Antagonist (Raven): “Raven stayed late after everyone left.”"
+      "Director (Priyanshi / Valentina): “Valentina yelled at me when the mic wasn’t even on.”",
+      "Writer (Akash / Theo): “Theo cried in the hallway.”",
+      "Minor Character (Shivangi / Lola): “Lola practices interviews alone.”",
+      "Co-Star (Caissa / Sabrina): “Sabrina talks badly about Luca when he leaves.”",
+      "Reporter (Viggy / Miles): “Miles tried to bribe me for audio files.”",
+      "Main Character (Varun / Luca): “Luca rehearsed a fight speech off-camera.”",
+      "Camera Operator (Misha / Nina): “Nina and I saw something weird that night.”",
+      "Costume Designer (Akansha / Celeste): “Celeste threatened to quit mid-shoot.”",
+      "Antagonist (Anisha / Raven): “Raven stayed late after everyone left.”",
+      "Gaffer (Mihir / Luke): “Luke kept muttering about his lights being moved.”"
     ],
     outfit: [
       "Cargo pants",
@@ -177,7 +183,7 @@ const CHARACTERS = {
   // Caissa -> Sabrina Hale (Co-Star)
   "CAISSA-K3T9W5": {
     name: "Sabrina Hale",
-    role: "Co-Star",
+    role: "Co-Star (Caissa / Sabrina)",
     promptHtml: `
       <p><strong>In this mystery, you are one of the main stars in the film, but not the lead.</strong> You can't make up your mind on your favorite scene in the movie.</p>
     `,
@@ -200,27 +206,28 @@ const CHARACTERS = {
       "Refuse to drink tap water"
     ],
     feels: [
-      "Director (Valentina): “Valentina favors Luca too much.”",
-      "Writer (Theo): “Theo rewrote scenes without telling me.”",
-      "Minor Character (Lola): “Lola needs to learn her place.”",
-      "Boom Operator (Jade): “Jade listens more than she speaks.”",
-      "Reporter (Miles): “Miles keeps asking about ‘rivalry rumors.’”",
-      "Main Character (Luca): “Luca and I carried this film, throw shade against them.”",
-      "Camera Operator (Nina): “Nina caught my bad side once.”",
-      "Costume Designer (Celeste): “Celeste made Luca look better than me.”",
-      "Antagonist (Raven): “Raven stayed in character even at wrap party.”"
+      "Director (Priyanshi / Valentina): “Valentina favors Luca too much.”",
+      "Writer (Akash / Theo): “Theo rewrote scenes without telling me.”",
+      "Minor Character (Shivangi / Lola): “Lola needs to learn her place.”",
+      "Boom Operator (Abhigna / Jake): “Jade listens more than she speaks.”",
+      "Reporter (Viggy / Miles): “Miles keeps asking about ‘rivalry rumors.’”",
+      "Main Character (Varun / Luca): “Luca and I carried this film.”",
+      "Camera Operator (Misha / Nina): “Nina caught my bad side once.”",
+      "Costume Designer (Akansha / Celeste): “Celeste made Luca look better than me.”",
+      "Antagonist (Anisha / Raven): “Raven stayed in character even at wrap party.”",
+      "Gaffer (Mihir / Luke): “Luke thinks he’s the real reason the film looks good.”"
     ],
     outfit: [
       "Stylish / fitted outfit",
       "Sunglasses",
-      "Drink in hand"
+      "Drink in hand (shade toward main character)"
     ]
   },
 
   // Viggy -> Miles Davenport (Reporter)
   "VIGGY-M7C4P1": {
     name: "Miles Davenport",
-    role: "Reporter",
+    role: "Reporter (Viggy / Miles)",
     promptHtml: `
       <p><strong>In this mystery, you play a beloved movie reporter.</strong> You have a notepad and ask people questions about the movie and their life.</p>
     `,
@@ -239,19 +246,20 @@ const CHARACTERS = {
       "Interview people"
     ],
     feels: [
-      "Director (Valentina): “Valentina is hiding something.”",
-      "Writer (Theo): “Theo drinks when stressed.”",
-      "Minor Character (Lola): “Lola wants fame badly.”",
-      "Boom Operator (Jade): “Jade has the real story.”",
-      "Co-Star (Sabrina): “Sabrina’s smile isn’t genuine.”",
-      "Main Character (Luca): “Luca’s ego is fragile.”",
-      "Camera Operator (Nina): “Nina avoids my questions.”",
-      "Costume Designer (Celeste): “Celeste threatened legal action.”",
-      "Antagonist (Raven): “Raven warned me to ‘be careful what I print.’”"
+      "Director (Priyanshi / Valentina): “Valentina is hiding something.”",
+      "Writer (Akash / Theo): “Theo drinks when stressed.”",
+      "Minor Character (Shivangi / Lola): “Lola wants fame badly.”",
+      "Boom Operator (Abhigna / Jake): “Jade has the real story.”",
+      "Co-Star (Caissa / Sabrina): “Sabrina’s smile isn’t genuine.”",
+      "Main Character (Varun / Luca): “Luca’s ego is fragile.”",
+      "Camera Operator (Misha / Nina): “Nina avoids my questions.”",
+      "Costume Designer (Akansha / Celeste): “Celeste threatened legal action.”",
+      "Antagonist (Anisha / Raven): “Raven warned me to ‘be careful what I print.’”",
+      "Gaffer (Mihir / Luke): “Luke’s alibi is… weirdly rehearsed.”"
     ],
     outfit: [
-      "Press badge (I will try to print one / if you can get that would be awesome)",
-      "Blazer/Glasses",
+      "Press badge (print one)",
+      "Blazer",
       "Notebook"
     ]
   },
@@ -259,7 +267,7 @@ const CHARACTERS = {
   // Varun -> Luca DeLuca (Main Character)
   "VARUN-X5N9D2": {
     name: "Luca DeLuca",
-    role: "Main Character",
+    role: "Main Character (Varun / Luca)",
     promptHtml: `
       <p><strong>In this mystery, you play as the movie’s big star.</strong> You enjoyed every scene you were a part of in the movie.</p>
     `,
@@ -280,15 +288,16 @@ const CHARACTERS = {
       "Make sure the Director’s drink is never empty"
     ],
     feels: [
-      "Director (Valentina): “Valentina discovered me.”",
-      "Writer (Theo): “Theo’s dialogue is too dramatic.”",
-      "Minor Character (Lola): “Lola misunderstood my friendliness.”",
-      "Boom Operator (Jade): “Jade caught something private.”",
-      "Co-Star (Sabrina): “Sabrina thinks we’re equals.”",
-      "Reporter (Miles): “Miles is twisting narratives.”",
-      "Camera Operator (Nina): “Nina knows my good angles.”",
-      "Costume Designer (Celeste): “Celeste made me look iconic.”",
-      "Antagonist (Raven): “Raven went off-script once.”"
+      "Director (Priyanshi / Valentina): “Valentina discovered me.”",
+      "Writer (Akash / Theo): “Theo’s dialogue is too dramatic.”",
+      "Minor Character (Shivangi / Lola): “Lola misunderstood my friendliness.”",
+      "Boom Operator (Abhigna / Jake): “Jade caught something private.”",
+      "Co-Star (Caissa / Sabrina): “Sabrina thinks we’re equals.”",
+      "Reporter (Viggy / Miles): “Miles is twisting narratives.”",
+      "Camera Operator (Misha / Nina): “Nina knows my good angles.”",
+      "Costume Designer (Akansha / Celeste): “Celeste made me look iconic.”",
+      "Antagonist (Anisha / Raven): “Raven went off-script once.”",
+      "Gaffer (Mihir / Luke): “Luke always interrupts my close-ups with ‘lighting notes.’”"
     ],
     outfit: [
       "Cocktail attire",
@@ -301,7 +310,7 @@ const CHARACTERS = {
   // Misha -> Nina Park (Camera Operator)
   "MISHA-R8K2V9": {
     name: "Nina Park",
-    role: "Camera Operator",
+    role: "Camera Operator (Misha / Nina)",
     promptHtml: `
       <p><strong>In this mystery, you play as the movie’s camera operator.</strong> Your favorite scene in the movie was the big chase.</p>
     `,
@@ -321,27 +330,28 @@ const CHARACTERS = {
       "Complement people in their pictures"
     ],
     feels: [
-      "Director (Valentina): “Valentina changed blocking last minute.”",
-      "Writer (Theo): “Theo argued loudly one night.”",
-      "Minor Character (Lola): “Lola lingered on set late.”",
-      "Boom Operator (Jade): “Jade heard the argument too.”",
-      "Co-Star (Sabrina): “Sabrina demanded retakes.”",
-      "Reporter (Miles): “Miles sneaked onto set.”",
-      "Main Character (Luca): “Luca left early that night.”",
-      "Costume Designer (Celeste): “Celeste stormed out crying.”",
-      "Antagonist (Raven): “Raven stayed after everyone wrapped.”"
+      "Director (Priyanshi / Valentina): “Valentina changed blocking last minute.”",
+      "Writer (Akash / Theo): “Theo argued loudly one night.”",
+      "Minor Character (Shivangi / Lola): “Lola lingered on set late.”",
+      "Boom Operator (Abhigna / Jake): “Jade heard the argument too.”",
+      "Co-Star (Caissa / Sabrina): “Sabrina demanded retakes.”",
+      "Reporter (Viggy / Miles): “Miles sneaked onto set.”",
+      "Main Character (Varun / Luca): “Luca left early that night.”",
+      "Costume Designer (Akansha / Celeste): “Celeste stormed out crying.”",
+      "Antagonist (Anisha / Raven): “Raven stayed after everyone wrapped.”",
+      "Gaffer (Mihir / Luke): “Luke keeps blaming me for touching his lights.”"
     ],
     outfit: [
       "All black outfit",
       "Optional beanie/cap",
-      "Some sort of camera (I have one you can use) — keep framing for shots"
+      "Some sort of camera (host has one you can use) — keep framing for shots"
     ]
   },
 
   // Akansha -> Celeste Moreau (Costume Designer)
   "AKANSHA-3J7QF4": {
     name: "Celeste Moreau",
-    role: "Costume Designer",
+    role: "Costume Designer (Akansha / Celeste)",
     promptHtml: `
       <p><strong>In this mystery, you designed and crafted all of the costumes in the film.</strong> Your favorite scene in the movie was the love scene.</p>
     `,
@@ -361,34 +371,35 @@ const CHARACTERS = {
       "Ask people for a loan"
     ],
     feels: [
-      "Director (Valentina): “Valentina questioned my genius.”",
-      "Writer (Theo): “Theo doesn’t understand visual storytelling.”",
-      "Minor Character (Lola): “Lola appreciated my work.”",
-      "Boom Operator (Jade): “Jade spilled coffee on a jacket.”",
-      "Co-Star (Sabrina): “Sabrina demanded last-minute changes.”",
-      "Reporter (Miles): “Miles spread rumors about budget cuts.”",
-      "Main Character (Luca): “Luca refused a fitting.”",
-      "Camera Operator (Nina): “Nina lit my designs beautifully.”",
-      "Antagonist (Raven): “Raven insisted on wearing black.”"
+      "Director (Priyanshi / Valentina): “Valentina questioned my genius.”",
+      "Writer (Akash / Theo): “Theo doesn’t understand visual storytelling.”",
+      "Minor Character (Shivangi / Lola): “Lola appreciated my work.”",
+      "Boom Operator (Abhigna / Jake): “Jade spilled coffee on a jacket.”",
+      "Co-Star (Caissa / Sabrina): “Sabrina demanded last-minute changes.”",
+      "Reporter (Viggy / Miles): “Miles spread rumors about budget cuts.”",
+      "Main Character (Varun / Luca): “Luca refused a fitting.”",
+      "Camera Operator (Misha / Nina): “Nina lit my designs beautifully.”",
+      "Antagonist (Anisha / Raven): “Raven insisted on wearing black.”",
+      "Gaffer (Mihir / Luke): “Luke says my fabrics ‘reflect light wrong.’ He can choke.”"
     ],
     outfit: [
       "Trendy outfit",
       "Statement glasses",
       "Scarf (very chic)",
-      "Measuring tape around neck, safety pins, other tailoring accessories"
+      "Measuring tape, safety pins, etc."
     ]
   },
 
   // Anisha -> Raven Vale (Antagonist)
   "ANISHA-P6W1T8": {
     name: "Raven Vale",
-    role: "Antagonist",
+    role: "Antagonist (Anisha / Raven)",
     promptHtml: `
       <p><strong>In this mystery, you play the movie’s antagonist/villain.</strong> Your favorite scene in the movie was the final battle.</p>
     `,
     motive: "You’re upset with the Director because they told crew members about your early work in a rather embarrassing low-budget sci-fi film. Although, you don't kill the director.",
     traits: [
-      "Enjoy having your picture taken",
+      "You enjoy having your picture taken",
       "Drive an electric car",
       "Hate your parents",
       "No pets",
@@ -402,21 +413,59 @@ const CHARACTERS = {
       "Flirt with everyone"
     ],
     feels: [
-      "Director (Valentina): “Valentina pushed me too far.”",
-      "Writer (Theo): “Theo understands darkness.”",
-      "Minor Character (Lola): “Lola talks too much.”",
-      "Boom Operator (Jade): “Jade watches quietly.”",
-      "Co-Star (Sabrina): “Sabrina fears being overshadowed.”",
-      "Reporter (Miles): “Miles should mind his business.”",
-      "Main Character (Luca): “Luca isn’t the hero he pretends to be.”",
-      "Camera Operator (Nina): “Nina saw something.”",
-      "Costume Designer (Celeste): “Celeste made me look powerful.”"
+      "Director (Priyanshi / Valentina): “Valentina pushed me too far.”",
+      "Writer (Akash / Theo): “Theo understands darkness.”",
+      "Minor Character (Shivangi / Lola): “Lola talks too much.”",
+      "Boom Operator (Abhigna / Jake): “Jade watches quietly.”",
+      "Co-Star (Caissa / Sabrina): “Sabrina fears being overshadowed.”",
+      "Reporter (Viggy / Miles): “Miles should mind his business.”",
+      "Main Character (Varun / Luca): “Luca isn’t the hero he pretends to be.”",
+      "Camera Operator (Misha / Nina): “Nina saw something.”",
+      "Costume Designer (Akansha / Celeste): “Celeste made me look powerful.”",
+      "Gaffer (Mihir / Luke): “Luke is useful… when he stays silent.”"
     ],
     outfit: [
       "Leather jacket cool girl vibes",
-      "Dark lipstick",
+      "Dark lippie",
       "Gloves (optional)",
       "Villainous tone"
+    ]
+  },
+
+  // Mihir -> Luke Kane (Gaffer)
+  "MIHIR-L8Q4T2": {
+    name: "Luke Kane",
+    role: "Gaffer (Mihir / Luke)",
+    promptHtml: `
+      <p><strong>In this mystery, you play as the movie's gaffer,</strong> which means you were in charge of the lighting. Your favorite scene was when the monster first appeared.</p>
+    `,
+    motive: "You really don't have much of a motive for killing the Director, but you do have a motive for killing the camera operator because they would move your lights around.",
+    traits: [
+      "Graceful",
+      "Own a pet spider",
+      "Blackjack player",
+      "The only kind of guns you know how to use are on video games",
+      "Indifferent to people’s beliefs in the supernatural and conspiracy theories"
+    ],
+    doThis: [
+      "Talk about other guests' pets",
+      "Say negative things about the Camera Operator (Misha / Nina) that inadvertently makes them look like a good person"
+    ],
+    feels: [
+      "Director (Priyanshi / Valentina): “She never appreciates lighting.”",
+      "Writer (Akash / Theo): “Too moody to notice what makes scenes work.”",
+      "Minor Character (Shivangi / Lola): “Always trying to be in the spotlight.”",
+      "Boom Operator (Abhigna / Jake): “At least Jake stays in his lane.”",
+      "Co-Star (Caissa / Sabrina): “Thinks she’s the lead. She’s not.”",
+      "Reporter (Viggy / Miles): “Fishing for drama. Annoying.”",
+      "Main Character (Varun / Luca): “Ego blocks the light.”",
+      "Camera Operator (Misha / Nina): “Stop touching my lights.”",
+      "Costume Designer (Akansha / Celeste): “Her fabrics reflect weird.”",
+      "Antagonist (Anisha / Raven): “Actually understands mood.”"
+    ],
+    outfit: [
+      "Option 1 – Classic Film Crew: Black T-shirt, cargo pants/jeans, baseball cap, tool belt/fanny pack, flashlight clipped somewhere",
+      "Option 2 – Lighting Nerd: Black hoodie, headlamp, work gloves, tape roll hanging from belt"
     ]
   }
 };
